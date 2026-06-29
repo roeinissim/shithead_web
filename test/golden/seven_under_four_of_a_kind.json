@@ -1,0 +1,305 @@
+{
+  "id": "seven_under_four_of_a_kind",
+  "type": "trajectory",
+  "description": "Four-of-a-kind under a 7: legal only for rank value <= 7 (10/high get no exemption)",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "SEVEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "SEVEN"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_SPADES",
+          "suit": "SPADES",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "EIGHT_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "EIGHT_CLUBS",
+          "suit": "CLUBS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        },
+        {
+          "code": "TEN_SPADES",
+          "suit": "SPADES",
+          "rank": "TEN"
+        },
+        {
+          "code": "TEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "TEN"
+        },
+        {
+          "code": "TEN_CLUBS",
+          "suit": "CLUBS",
+          "rank": "TEN"
+        },
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        },
+        {
+          "code": "ACE_SPADES",
+          "suit": "SPADES",
+          "rank": "ACE"
+        },
+        {
+          "code": "ACE_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "ACE"
+        },
+        {
+          "code": "ACE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "ACE"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_SPADES",
+          "suit": "SPADES",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FOUR"
+        }
+      ]
+    }
+  ],
+  "legalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_SPADES",
+          "suit": "SPADES",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FOUR"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_SPADES",
+          "suit": "SPADES",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "FOUR_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FOUR"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "EIGHT_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "EIGHT_CLUBS",
+          "suit": "CLUBS",
+          "rank": "EIGHT"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        },
+        {
+          "code": "TEN_SPADES",
+          "suit": "SPADES",
+          "rank": "TEN"
+        },
+        {
+          "code": "TEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "TEN"
+        },
+        {
+          "code": "TEN_CLUBS",
+          "suit": "CLUBS",
+          "rank": "TEN"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        },
+        {
+          "code": "ACE_SPADES",
+          "suit": "SPADES",
+          "rank": "ACE"
+        },
+        {
+          "code": "ACE_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "ACE"
+        },
+        {
+          "code": "ACE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "ACE"
+        }
+      ],
+      "legal": false
+    }
+  ],
+  "steps": []
+}

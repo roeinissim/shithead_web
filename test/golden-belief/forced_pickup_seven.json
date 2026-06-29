@@ -1,0 +1,45 @@
+{
+  "id": "forced_pickup_seven",
+  "kind": "belief",
+  "description": "Forced pickup on a 7: only specials absent, NO power ceiling",
+  "config": {
+    "voidEnabled": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "SEVEN_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SEVEN"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "SEVEN_CLUBS"
+      ],
+      "voidContradicts": [
+        "JOKER_A",
+        "JOKER_B",
+        "THREE_CLUBS",
+        "THREE_DIAMONDS",
+        "THREE_HEARTS",
+        "THREE_SPADES",
+        "TWO_CLUBS",
+        "TWO_DIAMONDS",
+        "TWO_HEARTS",
+        "TWO_SPADES"
+      ],
+      "fair": true
+    }
+  ]
+}

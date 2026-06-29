@@ -1,0 +1,177 @@
+{
+  "id": "ten_burns",
+  "type": "trajectory",
+  "description": "10 burns the pile; same player moves again; refill",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [
+      {
+        "code": "FIVE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "FIVE"
+      },
+      {
+        "code": "SIX_SPADES",
+        "suit": "SPADES",
+        "rank": "SIX"
+      }
+    ],
+    "discardPile": [
+      {
+        "code": "SIX_HEARTS",
+        "suit": "HEARTS",
+        "rank": "SIX"
+      },
+      {
+        "code": "NINE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "NINE"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        },
+        {
+          "code": "FOUR_SPADES",
+          "suit": "SPADES",
+          "rank": "FOUR"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY",
+        "cards": [
+          {
+            "code": "TEN_HEARTS",
+            "suit": "HEARTS",
+            "rank": "TEN"
+          }
+        ]
+      },
+      "state": {
+        "phase": "PLAYING",
+        "winner": "NONE",
+        "playerTurn": true,
+        "stockDeck": [],
+        "discardPile": [],
+        "player": {
+          "hand": [
+            {
+              "code": "FOUR_SPADES",
+              "suit": "SPADES",
+              "rank": "FOUR"
+            },
+            {
+              "code": "FIVE_HEARTS",
+              "suit": "HEARTS",
+              "rank": "FIVE"
+            },
+            {
+              "code": "SIX_SPADES",
+              "suit": "SPADES",
+              "rank": "SIX"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "KING_HEARTS",
+              "suit": "HEARTS",
+              "rank": "KING"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": false,
+        "lastMoveWasJoker": false,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": [
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "FOUR_SPADES",
+              "suit": "SPADES",
+              "rank": "FOUR"
+            }
+          ]
+        },
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "FIVE_HEARTS",
+              "suit": "HEARTS",
+              "rank": "FIVE"
+            }
+          ]
+        },
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "SIX_SPADES",
+              "suit": "SPADES",
+              "rank": "SIX"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

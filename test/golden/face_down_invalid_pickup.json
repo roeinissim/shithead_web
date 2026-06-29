@@ -1,0 +1,134 @@
+{
+  "id": "face_down_invalid_pickup",
+  "type": "trajectory",
+  "description": "Invalid face-down flip -> player takes the pile (resolved)",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "KING_SPADES",
+        "suit": "SPADES",
+        "rank": "KING"
+      }
+    ],
+    "player": {
+      "hand": [],
+      "faceUp": [],
+      "faceDown": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "NINE_SPADES",
+          "suit": "SPADES",
+          "rank": "NINE"
+        }
+      ]
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "QUEEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "QUEEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY_FACE_DOWN",
+      "index": 0
+    },
+    {
+      "kind": "PLAY_FACE_DOWN",
+      "index": 1
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY_FACE_DOWN",
+        "index": 0
+      },
+      "state": {
+        "phase": "PLAYING",
+        "winner": "NONE",
+        "playerTurn": false,
+        "stockDeck": [],
+        "discardPile": [],
+        "player": {
+          "hand": [
+            {
+              "code": "FOUR_HEARTS",
+              "suit": "HEARTS",
+              "rank": "FOUR"
+            },
+            {
+              "code": "KING_SPADES",
+              "suit": "SPADES",
+              "rank": "KING"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": [
+            {
+              "code": "NINE_SPADES",
+              "suit": "SPADES",
+              "rank": "NINE"
+            }
+          ]
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": false,
+        "lastMoveWasJoker": false,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": [
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

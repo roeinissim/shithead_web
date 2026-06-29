@@ -1,0 +1,140 @@
+{
+  "id": "human_lossy_bucket",
+  "kind": "human",
+  "description": "Lossy: edges EXACT, freshest mid -> BUCKET, rest FORGOTTEN",
+  "config": {
+    "memorySpan": 1,
+    "sharpSpan": 0,
+    "loadSensitivity": 0.0,
+    "edgePreservation": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "FIVE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FIVE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "EIGHT_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "EIGHT"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "NINE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "NINE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "exact": [
+        "FIVE_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "FIVE_HEARTS",
+        "SIX_SPADES"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "EIGHT_DIAMONDS",
+        "FIVE_HEARTS"
+      ],
+      "buckets": [
+        "LOW"
+      ],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "FIVE_HEARTS",
+        "NINE_CLUBS"
+      ],
+      "buckets": [
+        "MID"
+      ],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "FIVE_HEARTS",
+        "KING_HEARTS"
+      ],
+      "buckets": [
+        "MID"
+      ],
+      "fair": true,
+      "leak": false
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "id": "transparent_effective_top",
+  "kind": "belief",
+  "description": "3 on top is see-through: void keyed to the 9 beneath",
+  "config": {
+    "voidEnabled": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "NINE_SPADES",
+          "suit": "SPADES",
+          "rank": "NINE"
+        },
+        {
+          "code": "THREE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "THREE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "NINE_SPADES",
+        "THREE_HEARTS"
+      ],
+      "voidContradicts": [
+        "ACE_CLUBS",
+        "ACE_DIAMONDS",
+        "ACE_HEARTS",
+        "ACE_SPADES",
+        "JACK_CLUBS",
+        "JACK_DIAMONDS",
+        "JACK_HEARTS",
+        "JACK_SPADES",
+        "JOKER_A",
+        "JOKER_B",
+        "KING_CLUBS",
+        "KING_DIAMONDS",
+        "KING_HEARTS",
+        "KING_SPADES",
+        "NINE_CLUBS",
+        "NINE_DIAMONDS",
+        "NINE_HEARTS",
+        "NINE_SPADES",
+        "QUEEN_CLUBS",
+        "QUEEN_DIAMONDS",
+        "QUEEN_HEARTS",
+        "QUEEN_SPADES",
+        "TEN_CLUBS",
+        "TEN_DIAMONDS",
+        "TEN_HEARTS",
+        "TEN_SPADES",
+        "THREE_CLUBS",
+        "THREE_DIAMONDS",
+        "THREE_HEARTS",
+        "THREE_SPADES",
+        "TWO_CLUBS",
+        "TWO_DIAMONDS",
+        "TWO_HEARTS",
+        "TWO_SPADES"
+      ],
+      "fair": true
+    }
+  ]
+}

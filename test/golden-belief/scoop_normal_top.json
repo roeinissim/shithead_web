@@ -1,0 +1,97 @@
+{
+  "id": "scoop_normal_top",
+  "kind": "belief",
+  "description": "Scoop on a normal top (K): pins + power-ceiling void",
+  "config": {
+    "voidEnabled": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        },
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        },
+        {
+          "code": "FIVE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FIVE"
+        }
+      ],
+      "oppHandSizeBefore": 3,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "FIVE_CLUBS",
+        "KING_SPADES",
+        "NINE_HEARTS"
+      ],
+      "voidContradicts": [
+        "ACE_CLUBS",
+        "ACE_DIAMONDS",
+        "ACE_HEARTS",
+        "ACE_SPADES",
+        "EIGHT_CLUBS",
+        "EIGHT_DIAMONDS",
+        "EIGHT_HEARTS",
+        "EIGHT_SPADES",
+        "FIVE_CLUBS",
+        "FIVE_DIAMONDS",
+        "FIVE_HEARTS",
+        "FIVE_SPADES",
+        "JACK_CLUBS",
+        "JACK_DIAMONDS",
+        "JACK_HEARTS",
+        "JACK_SPADES",
+        "JOKER_A",
+        "JOKER_B",
+        "KING_CLUBS",
+        "KING_DIAMONDS",
+        "KING_HEARTS",
+        "KING_SPADES",
+        "NINE_CLUBS",
+        "NINE_DIAMONDS",
+        "NINE_HEARTS",
+        "NINE_SPADES",
+        "QUEEN_CLUBS",
+        "QUEEN_DIAMONDS",
+        "QUEEN_HEARTS",
+        "QUEEN_SPADES",
+        "SEVEN_CLUBS",
+        "SEVEN_DIAMONDS",
+        "SEVEN_HEARTS",
+        "SEVEN_SPADES",
+        "SIX_CLUBS",
+        "SIX_DIAMONDS",
+        "SIX_HEARTS",
+        "SIX_SPADES",
+        "TEN_CLUBS",
+        "TEN_DIAMONDS",
+        "TEN_HEARTS",
+        "TEN_SPADES",
+        "THREE_CLUBS",
+        "THREE_DIAMONDS",
+        "THREE_HEARTS",
+        "THREE_SPADES",
+        "TWO_CLUBS",
+        "TWO_DIAMONDS",
+        "TWO_HEARTS",
+        "TWO_SPADES"
+      ],
+      "fair": true
+    }
+  ]
+}

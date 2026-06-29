@@ -1,0 +1,629 @@
+{
+  "id": "setup_confirm",
+  "type": "setup",
+  "description": "confirmSetup picks 3 face-up -> PLAYING",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "SETUP_CHOOSE_FACEUP",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [
+      {
+        "code": "SEVEN_HEARTS",
+        "suit": "HEARTS",
+        "rank": "SEVEN"
+      },
+      {
+        "code": "EIGHT_CLUBS",
+        "suit": "CLUBS",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "SIX_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "SIX"
+      },
+      {
+        "code": "ACE_SPADES",
+        "suit": "SPADES",
+        "rank": "ACE"
+      },
+      {
+        "code": "TEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "TEN"
+      },
+      {
+        "code": "QUEEN_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "FIVE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "FIVE"
+      },
+      {
+        "code": "SIX_HEARTS",
+        "suit": "HEARTS",
+        "rank": "SIX"
+      },
+      {
+        "code": "KING_HEARTS",
+        "suit": "HEARTS",
+        "rank": "KING"
+      },
+      {
+        "code": "TEN_SPADES",
+        "suit": "SPADES",
+        "rank": "TEN"
+      },
+      {
+        "code": "ACE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "ACE"
+      },
+      {
+        "code": "TWO_HEARTS",
+        "suit": "HEARTS",
+        "rank": "TWO"
+      },
+      {
+        "code": "TWO_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "TWO"
+      },
+      {
+        "code": "NINE_SPADES",
+        "suit": "SPADES",
+        "rank": "NINE"
+      },
+      {
+        "code": "SEVEN_SPADES",
+        "suit": "SPADES",
+        "rank": "SEVEN"
+      },
+      {
+        "code": "FIVE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "FIVE"
+      },
+      {
+        "code": "EIGHT_HEARTS",
+        "suit": "HEARTS",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "QUEEN_HEARTS",
+        "suit": "HEARTS",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "NINE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "NINE"
+      },
+      {
+        "code": "TEN_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "TEN"
+      },
+      {
+        "code": "THREE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "THREE"
+      },
+      {
+        "code": "FOUR_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "FOUR"
+      },
+      {
+        "code": "JACK_SPADES",
+        "suit": "SPADES",
+        "rank": "JACK"
+      },
+      {
+        "code": "ACE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "ACE"
+      },
+      {
+        "code": "THREE_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "THREE"
+      },
+      {
+        "code": "ACE_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "ACE"
+      },
+      {
+        "code": "EIGHT_SPADES",
+        "suit": "SPADES",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "QUEEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "FOUR_SPADES",
+        "suit": "SPADES",
+        "rank": "FOUR"
+      },
+      {
+        "code": "JACK_HEARTS",
+        "suit": "HEARTS",
+        "rank": "JACK"
+      },
+      {
+        "code": "THREE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "THREE"
+      },
+      {
+        "code": "QUEEN_SPADES",
+        "suit": "SPADES",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "KING_CLUBS",
+        "suit": "CLUBS",
+        "rank": "KING"
+      },
+      {
+        "code": "JOKER_A",
+        "suit": "NONE",
+        "rank": "JOKER"
+      },
+      {
+        "code": "TWO_CLUBS",
+        "suit": "CLUBS",
+        "rank": "TWO"
+      },
+      {
+        "code": "FOUR_HEARTS",
+        "suit": "HEARTS",
+        "rank": "FOUR"
+      }
+    ],
+    "discardPile": [],
+    "player": {
+      "hand": [
+        {
+          "code": "FOUR_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "SEVEN_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SEVEN"
+        },
+        {
+          "code": "JACK_CLUBS",
+          "suit": "CLUBS",
+          "rank": "JACK"
+        },
+        {
+          "code": "JACK_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "JACK"
+        },
+        {
+          "code": "KING_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "KING"
+        },
+        {
+          "code": "TWO_SPADES",
+          "suit": "SPADES",
+          "rank": "TWO"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": [
+        {
+          "code": "THREE_SPADES",
+          "suit": "SPADES",
+          "rank": "THREE"
+        },
+        {
+          "code": "JOKER_B",
+          "suit": "NONE",
+          "rank": "JOKER"
+        },
+        {
+          "code": "SIX_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "FIVE_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FIVE"
+        },
+        {
+          "code": "FIVE_SPADES",
+          "suit": "SPADES",
+          "rank": "FIVE"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        }
+      ],
+      "faceUp": [
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        },
+        {
+          "code": "EIGHT_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "SEVEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SEVEN"
+        }
+      ],
+      "faceDown": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        },
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        },
+        {
+          "code": "NINE_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "NINE"
+        }
+      ]
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "chosen": [
+    {
+      "code": "TWO_SPADES",
+      "suit": "SPADES",
+      "rank": "TWO"
+    },
+    {
+      "code": "KING_DIAMONDS",
+      "suit": "DIAMONDS",
+      "rank": "KING"
+    },
+    {
+      "code": "JACK_CLUBS",
+      "suit": "CLUBS",
+      "rank": "JACK"
+    }
+  ],
+  "expected": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [
+      {
+        "code": "SEVEN_HEARTS",
+        "suit": "HEARTS",
+        "rank": "SEVEN"
+      },
+      {
+        "code": "EIGHT_CLUBS",
+        "suit": "CLUBS",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "SIX_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "SIX"
+      },
+      {
+        "code": "ACE_SPADES",
+        "suit": "SPADES",
+        "rank": "ACE"
+      },
+      {
+        "code": "TEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "TEN"
+      },
+      {
+        "code": "QUEEN_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "FIVE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "FIVE"
+      },
+      {
+        "code": "SIX_HEARTS",
+        "suit": "HEARTS",
+        "rank": "SIX"
+      },
+      {
+        "code": "KING_HEARTS",
+        "suit": "HEARTS",
+        "rank": "KING"
+      },
+      {
+        "code": "TEN_SPADES",
+        "suit": "SPADES",
+        "rank": "TEN"
+      },
+      {
+        "code": "ACE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "ACE"
+      },
+      {
+        "code": "TWO_HEARTS",
+        "suit": "HEARTS",
+        "rank": "TWO"
+      },
+      {
+        "code": "TWO_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "TWO"
+      },
+      {
+        "code": "NINE_SPADES",
+        "suit": "SPADES",
+        "rank": "NINE"
+      },
+      {
+        "code": "SEVEN_SPADES",
+        "suit": "SPADES",
+        "rank": "SEVEN"
+      },
+      {
+        "code": "FIVE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "FIVE"
+      },
+      {
+        "code": "EIGHT_HEARTS",
+        "suit": "HEARTS",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "QUEEN_HEARTS",
+        "suit": "HEARTS",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "NINE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "NINE"
+      },
+      {
+        "code": "TEN_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "TEN"
+      },
+      {
+        "code": "THREE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "THREE"
+      },
+      {
+        "code": "FOUR_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "FOUR"
+      },
+      {
+        "code": "JACK_SPADES",
+        "suit": "SPADES",
+        "rank": "JACK"
+      },
+      {
+        "code": "ACE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "ACE"
+      },
+      {
+        "code": "THREE_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "THREE"
+      },
+      {
+        "code": "ACE_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "ACE"
+      },
+      {
+        "code": "EIGHT_SPADES",
+        "suit": "SPADES",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "QUEEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "FOUR_SPADES",
+        "suit": "SPADES",
+        "rank": "FOUR"
+      },
+      {
+        "code": "JACK_HEARTS",
+        "suit": "HEARTS",
+        "rank": "JACK"
+      },
+      {
+        "code": "THREE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "THREE"
+      },
+      {
+        "code": "QUEEN_SPADES",
+        "suit": "SPADES",
+        "rank": "QUEEN"
+      },
+      {
+        "code": "KING_CLUBS",
+        "suit": "CLUBS",
+        "rank": "KING"
+      },
+      {
+        "code": "JOKER_A",
+        "suit": "NONE",
+        "rank": "JOKER"
+      },
+      {
+        "code": "TWO_CLUBS",
+        "suit": "CLUBS",
+        "rank": "TWO"
+      },
+      {
+        "code": "FOUR_HEARTS",
+        "suit": "HEARTS",
+        "rank": "FOUR"
+      }
+    ],
+    "discardPile": [],
+    "player": {
+      "hand": [
+        {
+          "code": "FOUR_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "SEVEN_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SEVEN"
+        },
+        {
+          "code": "JACK_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "JACK"
+        }
+      ],
+      "faceUp": [
+        {
+          "code": "TWO_SPADES",
+          "suit": "SPADES",
+          "rank": "TWO"
+        },
+        {
+          "code": "KING_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "KING"
+        },
+        {
+          "code": "JACK_CLUBS",
+          "suit": "CLUBS",
+          "rank": "JACK"
+        }
+      ],
+      "faceDown": [
+        {
+          "code": "THREE_SPADES",
+          "suit": "SPADES",
+          "rank": "THREE"
+        },
+        {
+          "code": "JOKER_B",
+          "suit": "NONE",
+          "rank": "JOKER"
+        },
+        {
+          "code": "SIX_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "FIVE_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FIVE"
+        },
+        {
+          "code": "FIVE_SPADES",
+          "suit": "SPADES",
+          "rank": "FIVE"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        }
+      ],
+      "faceUp": [
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        },
+        {
+          "code": "EIGHT_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "SEVEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SEVEN"
+        }
+      ],
+      "faceDown": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        },
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        },
+        {
+          "code": "NINE_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "NINE"
+        }
+      ]
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "steps": []
+}

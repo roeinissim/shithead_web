@@ -1,0 +1,40 @@
+{
+  "id": "void_disabled",
+  "kind": "belief",
+  "description": "voidEnabled=false (scoop-only arm): pins, never any void",
+  "config": {
+    "voidEnabled": false
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        },
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "KING_SPADES",
+        "NINE_HEARTS"
+      ],
+      "voidContradicts": [],
+      "fair": true
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "id": "human_two_three_sharp",
+  "kind": "human",
+  "description": "2s/3s always EXACT; one mid bucketed under tight spans",
+  "config": {
+    "memorySpan": 2,
+    "sharpSpan": 1,
+    "loadSensitivity": 0.0,
+    "edgePreservation": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "TWO_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TWO"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "THREE_SPADES",
+          "suit": "SPADES",
+          "rank": "THREE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "SEVEN_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SEVEN"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "EIGHT_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "EIGHT"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "NINE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "NINE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "exact": [
+        "TWO_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "THREE_SPADES",
+        "TWO_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "SIX_DIAMONDS",
+        "THREE_SPADES",
+        "TWO_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "SEVEN_CLUBS",
+        "SIX_DIAMONDS",
+        "THREE_SPADES",
+        "TWO_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "EIGHT_DIAMONDS",
+        "SEVEN_CLUBS",
+        "SIX_DIAMONDS",
+        "THREE_SPADES",
+        "TWO_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "EIGHT_DIAMONDS",
+        "NINE_CLUBS",
+        "SIX_DIAMONDS",
+        "THREE_SPADES",
+        "TWO_HEARTS"
+      ],
+      "buckets": [
+        "LOW"
+      ],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "KING_HEARTS",
+        "NINE_CLUBS",
+        "SIX_DIAMONDS",
+        "THREE_SPADES",
+        "TWO_HEARTS"
+      ],
+      "buckets": [
+        "MID"
+      ],
+      "fair": true,
+      "leak": false
+    }
+  ]
+}

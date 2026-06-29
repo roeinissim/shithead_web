@@ -1,0 +1,87 @@
+{
+  "id": "human_faithful_max",
+  "kind": "human",
+  "description": "Max-fidelity spans: every scooped card EXACT (== faithful)",
+  "config": {
+    "memorySpan": 999,
+    "sharpSpan": 999,
+    "loadSensitivity": 0.0,
+    "edgePreservation": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "NINE_SPADES",
+          "suit": "SPADES",
+          "rank": "NINE"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    },
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "QUEEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "QUEEN"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "exact": [
+        "SIX_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "NINE_SPADES",
+        "SIX_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    },
+    {
+      "exact": [
+        "NINE_SPADES",
+        "QUEEN_DIAMONDS",
+        "SIX_HEARTS"
+      ],
+      "buckets": [],
+      "fair": true,
+      "leak": false
+    }
+  ]
+}

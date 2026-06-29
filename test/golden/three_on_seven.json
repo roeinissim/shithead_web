@@ -1,0 +1,125 @@
+{
+  "id": "three_on_seven",
+  "type": "trajectory",
+  "description": "3 on a 7: 7-regime persists beneath the 3",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "SEVEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "SEVEN"
+      },
+      {
+        "code": "THREE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "THREE"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ]
+    }
+  ],
+  "legalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ],
+      "legal": false
+    }
+  ],
+  "steps": []
+}

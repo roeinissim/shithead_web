@@ -1,0 +1,196 @@
+{
+  "id": "two_resets",
+  "type": "trajectory",
+  "description": "A 2 on top: any card (even a 4) plays",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "KING_HEARTS",
+        "suit": "HEARTS",
+        "rank": "KING"
+      },
+      {
+        "code": "TWO_SPADES",
+        "suit": "SPADES",
+        "rank": "TWO"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "SEVEN_SPADES",
+          "suit": "SPADES",
+          "rank": "SEVEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "QUEEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "QUEEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SEVEN_SPADES",
+          "suit": "SPADES",
+          "rank": "SEVEN"
+        }
+      ]
+    }
+  ],
+  "legalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SEVEN_SPADES",
+          "suit": "SPADES",
+          "rank": "SEVEN"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ],
+      "legal": true
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY",
+        "cards": [
+          {
+            "code": "FOUR_HEARTS",
+            "suit": "HEARTS",
+            "rank": "FOUR"
+          }
+        ]
+      },
+      "state": {
+        "phase": "PLAYING",
+        "winner": "NONE",
+        "playerTurn": false,
+        "stockDeck": [],
+        "discardPile": [
+          {
+            "code": "KING_HEARTS",
+            "suit": "HEARTS",
+            "rank": "KING"
+          },
+          {
+            "code": "TWO_SPADES",
+            "suit": "SPADES",
+            "rank": "TWO"
+          },
+          {
+            "code": "FOUR_HEARTS",
+            "suit": "HEARTS",
+            "rank": "FOUR"
+          }
+        ],
+        "player": {
+          "hand": [
+            {
+              "code": "SEVEN_SPADES",
+              "suit": "SPADES",
+              "rank": "SEVEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": false,
+        "lastMoveWasJoker": false,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": [
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

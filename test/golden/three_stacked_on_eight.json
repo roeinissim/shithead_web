@@ -1,0 +1,150 @@
+{
+  "id": "three_stacked_on_eight",
+  "type": "trajectory",
+  "description": "Two stacked 3s are skipped; effective top = 8",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "EIGHT_HEARTS",
+        "suit": "HEARTS",
+        "rank": "EIGHT"
+      },
+      {
+        "code": "THREE_SPADES",
+        "suit": "SPADES",
+        "rank": "THREE"
+      },
+      {
+        "code": "THREE_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "THREE"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "SEVEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SEVEN"
+        },
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        }
+      ]
+    }
+  ],
+  "legalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "SEVEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SEVEN"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        }
+      ],
+      "legal": true
+    }
+  ],
+  "steps": []
+}

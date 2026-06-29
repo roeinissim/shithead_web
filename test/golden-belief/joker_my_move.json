@@ -1,0 +1,47 @@
+{
+  "id": "joker_my_move",
+  "kind": "belief",
+  "description": "My joker transfers the pile to opponent: pins those cards",
+  "config": {
+    "voidEnabled": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "PLAY",
+        "cards": [
+          {
+            "code": "JOKER_A",
+            "suit": "NONE",
+            "rank": "JOKER"
+          }
+        ]
+      },
+      "pileBefore": [
+        {
+          "code": "QUEEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "QUEEN"
+        },
+        {
+          "code": "EIGHT_SPADES",
+          "suit": "SPADES",
+          "rank": "EIGHT"
+        }
+      ],
+      "oppHandSizeBefore": 0,
+      "deckSizeBefore": 0,
+      "isMyMove": true
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "EIGHT_SPADES",
+        "QUEEN_HEARTS"
+      ],
+      "voidContradicts": [],
+      "fair": true
+    }
+  ]
+}

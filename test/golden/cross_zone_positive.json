@@ -1,0 +1,139 @@
+{
+  "id": "cross_zone_positive",
+  "type": "trajectory",
+  "description": "Deck empty + all hand same rank: hand+faceUp combine is legal",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "FIVE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "FIVE"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        }
+      ],
+      "faceUp": [
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        }
+      ],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        }
+      ],
+      "legal": false
+    }
+  ],
+  "steps": []
+}

@@ -1,0 +1,152 @@
+{
+  "id": "eight_skip",
+  "type": "trajectory",
+  "description": "8 skips the opponent; mover plays again",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "FOUR_CLUBS",
+        "suit": "CLUBS",
+        "rank": "FOUR"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "QUEEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "QUEEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY",
+        "cards": [
+          {
+            "code": "EIGHT_HEARTS",
+            "suit": "HEARTS",
+            "rank": "EIGHT"
+          }
+        ]
+      },
+      "state": {
+        "phase": "PLAYING",
+        "winner": "NONE",
+        "playerTurn": true,
+        "stockDeck": [],
+        "discardPile": [
+          {
+            "code": "FOUR_CLUBS",
+            "suit": "CLUBS",
+            "rank": "FOUR"
+          },
+          {
+            "code": "EIGHT_HEARTS",
+            "suit": "HEARTS",
+            "rank": "EIGHT"
+          }
+        ],
+        "player": {
+          "hand": [
+            {
+              "code": "KING_SPADES",
+              "suit": "SPADES",
+              "rank": "KING"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": true,
+        "lastMoveWasJoker": false,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": [
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "KING_SPADES",
+              "suit": "SPADES",
+              "rank": "KING"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

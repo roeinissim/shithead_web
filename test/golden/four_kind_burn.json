@@ -1,0 +1,151 @@
+{
+  "id": "four_kind_burn",
+  "type": "trajectory",
+  "description": "Completing four-of-a-kind burns; same player again",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "FIVE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "FIVE"
+      },
+      {
+        "code": "FIVE_SPADES",
+        "suit": "SPADES",
+        "rank": "FIVE"
+      },
+      {
+        "code": "FIVE_DIAMONDS",
+        "suit": "DIAMONDS",
+        "rank": "FIVE"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "FIVE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FIVE"
+        },
+        {
+          "code": "SEVEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SEVEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FIVE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "FIVE"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SEVEN_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SEVEN"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY",
+        "cards": [
+          {
+            "code": "FIVE_CLUBS",
+            "suit": "CLUBS",
+            "rank": "FIVE"
+          }
+        ]
+      },
+      "state": {
+        "phase": "PLAYING",
+        "winner": "NONE",
+        "playerTurn": true,
+        "stockDeck": [],
+        "discardPile": [],
+        "player": {
+          "hand": [
+            {
+              "code": "SEVEN_DIAMONDS",
+              "suit": "DIAMONDS",
+              "rank": "SEVEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "KING_HEARTS",
+              "suit": "HEARTS",
+              "rank": "KING"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": false,
+        "lastMoveWasJoker": false,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": [
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "SEVEN_DIAMONDS",
+              "suit": "DIAMONDS",
+              "rank": "SEVEN"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

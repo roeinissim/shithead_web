@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Shithead">
+  <rect width="512" height="512" rx="104" fill="#0b3d2e"/>
+  <g transform="rotate(-9 256 256)">
+    <rect x="168" y="116" width="176" height="244" rx="22" fill="#fbf7ee"/>
+    <text x="256" y="300" font-size="170" text-anchor="middle" fill="#1d2733" font-family="Arial, sans-serif">&#9824;</text>
+  </g>
+  <circle cx="362" cy="372" r="58" fill="#f4c542"/>
+  <text x="362" y="396" font-size="62" text-anchor="middle" fill="#5a4500" font-family="Arial, sans-serif" font-weight="bold">&#9818;</text>
+</svg>

@@ -1,0 +1,135 @@
+{
+  "id": "joker_on_empty",
+  "type": "trajectory",
+  "description": "Joker on empty pile: no transfer, joker still consumed",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [],
+    "player": {
+      "hand": [
+        {
+          "code": "JOKER_A",
+          "suit": "NONE",
+          "rank": "JOKER"
+        },
+        {
+          "code": "FOUR_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FOUR"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "QUEEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "QUEEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "JOKER_A",
+          "suit": "NONE",
+          "rank": "JOKER"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "FOUR"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY",
+        "cards": [
+          {
+            "code": "JOKER_A",
+            "suit": "NONE",
+            "rank": "JOKER"
+          }
+        ]
+      },
+      "state": {
+        "phase": "PLAYING",
+        "winner": "NONE",
+        "playerTurn": true,
+        "stockDeck": [],
+        "discardPile": [],
+        "player": {
+          "hand": [
+            {
+              "code": "FOUR_DIAMONDS",
+              "suit": "DIAMONDS",
+              "rank": "FOUR"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": false,
+        "lastMoveWasJoker": true,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": [
+        {
+          "kind": "PLAY",
+          "cards": [
+            {
+              "code": "FOUR_DIAMONDS",
+              "suit": "DIAMONDS",
+              "rank": "FOUR"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

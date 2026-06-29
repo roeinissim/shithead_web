@@ -1,0 +1,68 @@
+{
+  "id": "known_rank_filter_AK",
+  "kind": "belief",
+  "description": "knownRankFilter={A,K}: only A/K scooped cards pinned",
+  "config": {
+    "voidEnabled": true,
+    "knownRankFilter": [
+      "KING",
+      "ACE"
+    ]
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        },
+        {
+          "code": "NINE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "NINE"
+        },
+        {
+          "code": "ACE_CLUBS",
+          "suit": "CLUBS",
+          "rank": "ACE"
+        }
+      ],
+      "oppHandSizeBefore": 3,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "ACE_CLUBS",
+        "KING_SPADES"
+      ],
+      "voidContradicts": [
+        "ACE_CLUBS",
+        "ACE_DIAMONDS",
+        "ACE_HEARTS",
+        "ACE_SPADES",
+        "JOKER_A",
+        "JOKER_B",
+        "TEN_CLUBS",
+        "TEN_DIAMONDS",
+        "TEN_HEARTS",
+        "TEN_SPADES",
+        "THREE_CLUBS",
+        "THREE_DIAMONDS",
+        "THREE_HEARTS",
+        "THREE_SPADES",
+        "TWO_CLUBS",
+        "TWO_DIAMONDS",
+        "TWO_HEARTS",
+        "TWO_SPADES"
+      ],
+      "fair": true
+    }
+  ]
+}

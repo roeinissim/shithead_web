@@ -1,0 +1,160 @@
+{
+  "id": "three_full_pile",
+  "type": "trajectory",
+  "description": "Pile is only 3s: effective top is nothing, anything plays",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "THREE_HEARTS",
+        "suit": "HEARTS",
+        "rank": "THREE"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        },
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ]
+    }
+  ],
+  "legalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ],
+      "legal": true
+    }
+  ],
+  "steps": []
+}

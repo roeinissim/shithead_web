@@ -1,0 +1,40 @@
+{
+  "id": "forced_pickup_two",
+  "kind": "belief",
+  "description": "Forced pickup on a 2 (RESET): infer nothing",
+  "config": {
+    "voidEnabled": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        },
+        {
+          "code": "TWO_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TWO"
+        }
+      ],
+      "oppHandSizeBefore": 2,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "KING_SPADES",
+        "TWO_HEARTS"
+      ],
+      "voidContradicts": [],
+      "fair": true
+    }
+  ]
+}

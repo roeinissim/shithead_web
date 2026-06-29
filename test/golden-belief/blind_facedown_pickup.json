@@ -1,0 +1,34 @@
+{
+  "id": "blind_facedown_pickup",
+  "kind": "belief",
+  "description": "Pickup from EMPTY hand (blind flip): pins, no void",
+  "config": {
+    "voidEnabled": true
+  },
+  "events": [
+    {
+      "move": {
+        "kind": "TAKE_PILE"
+      },
+      "pileBefore": [
+        {
+          "code": "KING_SPADES",
+          "suit": "SPADES",
+          "rank": "KING"
+        }
+      ],
+      "oppHandSizeBefore": 0,
+      "deckSizeBefore": 0,
+      "isMyMove": false
+    }
+  ],
+  "snapshots": [
+    {
+      "pinned": [
+        "KING_SPADES"
+      ],
+      "voidContradicts": [],
+      "fair": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "face_down_valid_win",
+  "type": "trajectory",
+  "description": "Valid face-down empties last zone (deck empty) -> win",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "NINE_CLUBS",
+        "suit": "CLUBS",
+        "rank": "NINE"
+      }
+    ],
+    "player": {
+      "hand": [],
+      "faceUp": [],
+      "faceDown": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ]
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "QUEEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "QUEEN"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY_FACE_DOWN",
+      "index": 0
+    }
+  ],
+  "steps": [
+    {
+      "move": {
+        "kind": "PLAY_FACE_DOWN",
+        "index": 0
+      },
+      "state": {
+        "phase": "GAME_OVER",
+        "winner": "PLAYER",
+        "playerTurn": false,
+        "stockDeck": [],
+        "discardPile": [
+          {
+            "code": "NINE_CLUBS",
+            "suit": "CLUBS",
+            "rank": "NINE"
+          },
+          {
+            "code": "KING_HEARTS",
+            "suit": "HEARTS",
+            "rank": "KING"
+          }
+        ],
+        "player": {
+          "hand": [],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "ai": {
+          "hand": [
+            {
+              "code": "QUEEN_HEARTS",
+              "suit": "HEARTS",
+              "rank": "QUEEN"
+            }
+          ],
+          "faceUp": [],
+          "faceDown": []
+        },
+        "lastMoveWasSkip": false,
+        "lastMoveWasJoker": false,
+        "jokerTookCards": false,
+        "isPendingBurn": false,
+        "aiLockedInPickup": false,
+        "playerLockedInPickup": false
+      },
+      "legalMoves": []
+    }
+  ]
+}

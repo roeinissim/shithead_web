@@ -1,0 +1,355 @@
+{
+  "id": "seven_under_matrix",
+  "type": "trajectory",
+  "description": "Effective top = 7: lock legal/illegal for 2,3,4,8,10,A,Joker,four-of-a-kind",
+  "specialActions": {
+    "TWO": "RESET",
+    "THREE": "TRANSPARENT",
+    "SEVEN": "LOWER",
+    "EIGHT": "SKIP",
+    "TEN": "BURN"
+  },
+  "initialState": {
+    "phase": "PLAYING",
+    "winner": "NONE",
+    "playerTurn": true,
+    "stockDeck": [],
+    "discardPile": [
+      {
+        "code": "SEVEN_CLUBS",
+        "suit": "CLUBS",
+        "rank": "SEVEN"
+      }
+    ],
+    "player": {
+      "hand": [
+        {
+          "code": "TWO_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TWO"
+        },
+        {
+          "code": "THREE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "THREE"
+        },
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        },
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        },
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        },
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        },
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SIX"
+        },
+        {
+          "code": "JOKER_A",
+          "suit": "NONE",
+          "rank": "JOKER"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "ai": {
+      "hand": [
+        {
+          "code": "KING_HEARTS",
+          "suit": "HEARTS",
+          "rank": "KING"
+        }
+      ],
+      "faceUp": [],
+      "faceDown": []
+    },
+    "lastMoveWasSkip": false,
+    "lastMoveWasJoker": false,
+    "jokerTookCards": false,
+    "isPendingBurn": false,
+    "aiLockedInPickup": false,
+    "playerLockedInPickup": false
+  },
+  "initialLegalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "TWO_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TWO"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "THREE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "THREE"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "JOKER_A",
+          "suit": "NONE",
+          "rank": "JOKER"
+        }
+      ]
+    }
+  ],
+  "legalMoves": [
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "TWO_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TWO"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "THREE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "THREE"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SIX"
+        }
+      ]
+    },
+    {
+      "kind": "PLAY",
+      "cards": [
+        {
+          "code": "JOKER_A",
+          "suit": "NONE",
+          "rank": "JOKER"
+        }
+      ]
+    }
+  ],
+  "validateProbes": [
+    {
+      "cards": [
+        {
+          "code": "TWO_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TWO"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "THREE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "THREE"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "FOUR_HEARTS",
+          "suit": "HEARTS",
+          "rank": "FOUR"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "EIGHT_HEARTS",
+          "suit": "HEARTS",
+          "rank": "EIGHT"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "TEN_HEARTS",
+          "suit": "HEARTS",
+          "rank": "TEN"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "ACE_HEARTS",
+          "suit": "HEARTS",
+          "rank": "ACE"
+        }
+      ],
+      "legal": false
+    },
+    {
+      "cards": [
+        {
+          "code": "JOKER_A",
+          "suit": "NONE",
+          "rank": "JOKER"
+        }
+      ],
+      "legal": true
+    },
+    {
+      "cards": [
+        {
+          "code": "SIX_HEARTS",
+          "suit": "HEARTS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_SPADES",
+          "suit": "SPADES",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_DIAMONDS",
+          "suit": "DIAMONDS",
+          "rank": "SIX"
+        },
+        {
+          "code": "SIX_CLUBS",
+          "suit": "CLUBS",
+          "rank": "SIX"
+        }
+      ],
+      "legal": true
+    }
+  ],
+  "steps": []
+}

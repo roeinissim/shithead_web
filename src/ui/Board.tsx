@@ -12,8 +12,7 @@ interface BoardProps {
 }
 
 // A1 + #3: face-up cards rest ON their face-down slot AND stay PINNED to a fixed slot for the whole
-// game (no hole-filling). `slots` = the frozen face-up code per slot; absence => empty slot, others
-// don't move. Face-down (blind backs) stays array-indexed so the tap maps to the engine index.
+// game (no hole-filling). Face-down (blind backs) stays array-indexed so the tap maps to the engine index.
 function TableSet(props: {
   faceUp: Card[]; faceDown: Card[]; slots?: string[] | undefined; selected?: Set<string>;
   faceDownActive?: boolean; onSelect?: (code: string) => void; onFaceDown?: (i: number) => void;
@@ -47,7 +46,7 @@ function TableSet(props: {
 
 function Hand(props: { cards: Card[]; selected: Set<string>; onSelect: (code: string) => void }) {
   const { cards, selected, onSelect } = props;
-  const cw = 64;
+  const cw = 66.6; // hand card width (round-6 C: 74 ×0.9); MUST match --cw-hand. Fan step/overlap scales with it.
   const avail = Math.min((typeof window !== 'undefined' ? window.innerWidth : 390) - 20, 760);
   const step = cards.length <= 1 ? cw : Math.min(cw * 0.72, (avail - cw) / (cards.length - 1));
   const overlap = Math.round(step - cw);
@@ -63,34 +62,43 @@ function Hand(props: { cards: Card[]; selected: Set<string>; onSelect: (code: st
 }
 
 export function Board({ state, selected, faceDownActive, onSelect, onFaceDown }: BoardProps) {
-  const { player, ai, discardPile, stockDeck } = state.engine;
+  // #2: while an effect resolves, render the Frame-1 synthetic state the engine produced (refilled
+  // hand, decremented deck, played card on the pre-burn pile); otherwise the live state.
+  const displayEngine = state.ui.effectPreview ?? state.engine;
+  const { player, ai, discardPile, stockDeck } = displayEngine;
   const slots = state.ui.faceUpSlots;
-  // #2: while an effect is resolving, show the played card resting on the pile.
-  const pile = state.ui.effectPreview ?? discardPile;
-  const top = pile.slice(-4);
+  const playerHand = player.hand;
+  const playerFaceUp = player.faceUp;
+  const aiHand = ai.hand;
+  const aiFaceUp = ai.faceUp;
+  const top = discardPile.slice(-4);
 
   return (
     <div className="board">
       <section className="zone opp" aria-label={T.opponent}>
         <div className="zone-tag">{T.opponent}</div>
         <div className="hand-fan backs" aria-hidden>
-          {ai.hand.map((_, i) => (
+          {aiHand.map((_, i) => (
             <div className="fan-card" key={i} style={{ marginInlineStart: i === 0 ? 0 : -30, zIndex: i }}>
               <CardBack small />
             </div>
           ))}
         </div>
-        <TableSet faceUp={ai.faceUp} faceDown={ai.faceDown} slots={slots?.ai} />
+        <TableSet faceUp={aiFaceUp} faceDown={ai.faceDown} slots={slots?.ai} />
       </section>
 
+      {/* #4: deck + discard CARDS bottom-aligned (same Y); both counters on a shared Y line.
+          Round-6 D: when the deck (koupa) is exhausted (STABLE terminal — refill is atomic, deck is
+          monotonic, so 0 is never transient) drop the deck stack/marker entirely; the lone discard
+          then centers horizontally via the section's justify-content: center. */}
       <section className="zone center">
-        <div className="deck-col">
+        {stockDeck.length > 0 && (
           <div className="deck-stack">
-            {stockDeck.length > 0 ? <CardBack /> : <CardSlot><span className="empty-tag">{T.deck}</span></CardSlot>}
-            {stockDeck.length > 0 && <span className="counter on-deck">{T.deck} {stockDeck.length}</span>}
+            <CardBack />
+            <span className="counter on-card">{T.deck} {stockDeck.length}</span>
           </div>
-        </div>
-        <div className="pile-col">
+        )}
+        <div className="pile-stack">
           <div className="cascade" aria-label={T.discard}>
             {top.length === 0 && <CardSlot><span className="empty-tag">{T.discard}</span></CardSlot>}
             {top.map((c, i) => {
@@ -103,14 +111,14 @@ export function Board({ state, selected, faceDownActive, onSelect, onFaceDown }:
               );
             })}
           </div>
-          {pile.length > 0 && <span className="counter">{T.discard} {pile.length}</span>}
+          {discardPile.length > 0 && <span className="counter on-card">{T.discard} {discardPile.length}</span>}
         </div>
       </section>
 
       <section className="zone me" aria-label={T.you}>
-        <TableSet faceUp={player.faceUp} faceDown={player.faceDown} slots={slots?.player} selected={selected}
+        <TableSet faceUp={playerFaceUp} faceDown={player.faceDown} slots={slots?.player} selected={selected}
           faceDownActive={faceDownActive} onSelect={onSelect} onFaceDown={onFaceDown} />
-        <Hand cards={player.hand} selected={selected} onSelect={onSelect} />
+        <Hand cards={playerHand} selected={selected} onSelect={onSelect} />
         <div className="zone-tag">{T.you}</div>
       </section>
     </div>

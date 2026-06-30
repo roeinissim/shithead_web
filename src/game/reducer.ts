@@ -16,7 +16,7 @@ export interface UiState {
   selected: string[];
   thinking: boolean;
   reveal: Reveal | null;
-  effectPreview: { pile: Card[]; played: string[] } | null; // #2: 3-frame — pile WITH the played card; played = codes to drop from hand
+  effectPreview: GameState | null; // #2: Frame-1 synthetic state the engine produced (refilled hand, decremented deck, card on the pre-burn pile)
   faceUpSlots: FaceUpSlots | null; // #3: each face-up card pinned to its setup slot (no hole-filling)
   lastAction: string;
   decisionMs: number[];
@@ -29,7 +29,7 @@ export type Action =
   | { type: 'CONFIRM_SETUP' }
   | { type: 'APPLY'; move: Move }
   | { type: 'BEGIN_REVEAL'; seat: 'player' | 'ai'; index: number }
-  | { type: 'BEGIN_EFFECT'; pile: Card[]; played: string[] }
+  | { type: 'BEGIN_EFFECT'; frame1: GameState }
   | { type: 'RECORD_MS'; ms: number }
   | { type: 'SET_THINKING'; value: boolean };
 
@@ -94,9 +94,15 @@ export function reducer(state: GameUiState, action: Action): GameUiState {
 
     case 'APPLY': {
       const next = applyMove(rules, engine, action.move);
+      // Persist the human's selection across non-player phases (bot turn, burn/joker effect delays)
+      // instead of blanket-clearing it. Reconcile by stable card CODE against the ACTUAL post-move
+      // pool: drop any selected card no longer in hand/faceUp (just-played cards, or any that left).
+      // Identity-based, so the atomic refill can never leave a selection pointing at a different card.
+      const pool = new Set([...next.player.hand, ...next.player.faceUp].map((c) => c.code));
+      const selected = ui.selected.filter((code) => pool.has(code));
       return {
         engine: next,
-        ui: { ...ui, selected: [], reveal: null, effectPreview: null, lastAction: describe(action.move, engine) },
+        ui: { ...ui, selected, reveal: null, effectPreview: null, lastAction: describe(action.move, engine) },
       };
     }
 
@@ -108,7 +114,7 @@ export function reducer(state: GameUiState, action: Action): GameUiState {
     }
 
     case 'BEGIN_EFFECT':
-      return { engine, ui: { ...ui, effectPreview: { pile: action.pile, played: action.played } } };
+      return { engine, ui: { ...ui, effectPreview: action.frame1 } };
 
     case 'RECORD_MS':
       return { engine, ui: { ...ui, decisionMs: [...ui.decisionMs, action.ms] } };

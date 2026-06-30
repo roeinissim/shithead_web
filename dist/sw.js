@@ -1,7 +1,13 @@
 // Minimal service worker. Navigations are NETWORK-FIRST (an online client always gets the latest
 // app shell -> latest hashed assets; falls back to cache offline). Hashed build assets are
 // cache-first (immutable). Gives installability + offline without the stale-build trap.
-const CACHE = 'shithead-v2';
+//
+// CACHE version = the update forcing-function. This file is static (not plugin-generated), so the
+// browser only re-installs the SW when these BYTES change. BUMP this on any release that must evict
+// an already-installed shell from existing clients; activate() then deletes the old cache and
+// clients.claim() takes over immediately. (New hashed bundles are picked up automatically via the
+// network-first navigation even without a bump — the bump only force-evicts a stuck shell.)
+const CACHE = 'shithead-v3';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/icon.svg'];
 
 self.addEventListener('install', (e) => {

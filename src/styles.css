@@ -3,7 +3,7 @@
   --card: #fbf7ee; --ink: #1d2733; --red: #c0392b; --black: #1d2733;
   --amber: #f4c542; --amber-ink: #5a4500; --back: #163a6b; --back-2: #0f2748;
   --muted: #9fc7b6; --slot: rgba(255,255,255,.16);
-  --cw: 64px; --cw-sm: 46px; --radius: 8px;
+  --cw: 64px; --cw-sm: 46px; --cw-hand: 66.6px; --cw-opp: 55px; --radius: 8px;
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body, #root { height: 100%; margin: 0; }
@@ -20,7 +20,7 @@ body {
 
 .board { flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; padding: 2px 6px; }
 .zone { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.zone.center { flex-direction: row; justify-content: center; align-items: flex-start; gap: 26px; padding: 2px 0; }
+.zone.center { flex-direction: row; justify-content: center; align-items: flex-end; gap: 28px; padding: 2px 0 24px; }
 .zone-tag { font-size: 12px; color: var(--muted); letter-spacing: 1px; }
 
 /* base card box (PNG fills it; CSS fallback uses the same box) */
@@ -48,7 +48,7 @@ body {
 /* A1: face-up resting ON the face-down slot */
 .tableset { display: flex; gap: 6px; justify-content: center; }
 .zone.opp .tableset { margin-top: 14px; } /* keep opp hand from covering face-up/down */
-.tslot { position: relative; width: var(--cw-sm); aspect-ratio: 5 / 7; }
+.tslot { position: relative; width: var(--cw-opp); aspect-ratio: 5 / 7; }
 .tslot-back, .tslot-up, .fd-tap, .tslot-empty { position: absolute; inset: 0; }
 .tslot-up { transform: translateY(-7px); } /* lifts the face-up so the back peeks below it */
 .tslot-empty { border: 2px dashed var(--slot); border-radius: var(--radius); }
@@ -60,16 +60,16 @@ body {
 .hand-fan.backs { padding-top: 0; min-height: 0; }
 
 /* A3: deck count ABOVE the deck stack */
-.deck-col { display: flex; flex-direction: column; align-items: center; }
-.deck-stack { position: relative; display: grid; place-items: center; }
+.deck-stack, .pile-stack { position: relative; width: var(--cw); aspect-ratio: 5 / 7; }
+.deck-stack { display: grid; place-items: center; }
 /* uniform matched-pair counters: deck counter sits ON the stack, discard counter BELOW its pile */
 .counter { font: 700 12px ui-monospace, monospace; color: var(--amber); background: rgba(7,38,28,.82);
   border: 1px solid rgba(244,197,66,.45); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
-.counter.on-deck { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+/* both counters straddle the shared bottom line: deck counter on the deck base, discard counter just below the discard */
+.counter.on-card { position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); }
 
 /* A2: discard with depth peek (transforms set inline) */
-.pile-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.cascade { position: relative; width: var(--cw); aspect-ratio: 5 / 7; margin: 12px 12px 0 0; }
+.cascade { position: relative; width: 100%; height: 100%; }
 .cascade-card { position: absolute; inset: 0; }
 
 
@@ -103,3 +103,9 @@ body {
 .confirm-body { color: var(--muted); margin: 0 0 18px; font-size: 14px; }
 .confirm-actions { display: flex; gap: 10px; justify-content: center; }
 .confirm-actions .btn { flex: 0 0 auto; padding: 12px 22px; }
+
+/* card sizing: face-up/down stacks share --cw-opp for BOTH seats (round-6 B: was opp-only 55px vs
+   player 46px — unified at the source). Hand fan uses --cw-hand. */
+.tslot .card { width: 100%; }
+.zone.me .hand-fan .card { width: var(--cw-hand); }
+.zone.me .hand-fan { min-height: calc(var(--cw-hand) * 7 / 5 + 18px); }

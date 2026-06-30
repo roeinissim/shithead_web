@@ -8,6 +8,8 @@ export const rules = createRules(ACTIONS);
 // and the pre-game-over hold. Change this single number to tune the whole feel.
 export const ACTION_DELAY_MS = 1280;
 
-// Bot COMPUTE budget (decideMove wall-clock cap) — NOT a pacing delay; kept separate/high for the
-// on-device timing pass.
-export const DEFAULT_TIME_BUDGET_MS = 5000;
+// Bot COMPUTE budget — a SAFETY CEILING over the fixed 150-sim search (decideMove finishes on its
+// own; the budget only ever truncates a pathological overrun, never real play). Set from the iPhone
+// 17 timing pass: max observed decideMove = 291ms, so 700ms never truncates and stays well under one
+// ACTION_DELAY_MS (1280ms) beat. NOT a pacing delay; not the old Android 2000ms.
+export const DEFAULT_TIME_BUDGET_MS = 700;
